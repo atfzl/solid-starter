@@ -8,9 +8,13 @@ injectGlobal`
   html {
     height: 100%;
     width: 100%;
+    font-size: 10px;
   }
 
   body {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
     height: 100%;
