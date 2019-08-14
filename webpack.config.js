@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  mode: !isProps ? 'development' : 'production',
+  mode: !isProd ? 'development' : 'production',
 
   entry: path.resolve(__dirname, '#'),
 
@@ -25,5 +25,8 @@ module.exports = {
     ],
   },
 
-  plugins: [new ForkTsCheckerWebpackPlugin(), new HtmlWebpackPlugin()],
+  plugins: [
+    new ForkTsCheckerWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: '#/index.html' }),
+  ],
 };

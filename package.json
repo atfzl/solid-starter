@@ -5,7 +5,8 @@
   "author": "Atif Afzal <atif5801@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --hot --history-api-fallback --quiet --liveReload=false"
+    "start": "webpack-dev-server --hot --history-api-fallback --quiet --liveReload=false",
+    "check-types": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -16,11 +17,15 @@
     "@types/webpack": "^4.32.1",
     "@types/webpack-env": "^1.14.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-solid": "^0.1.0",
     "fork-ts-checker-webpack-plugin": "^1.5.0",
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "solid-js": "^0.10.1"
   }
 }
