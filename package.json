@@ -26,6 +26,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "emotion": "^10.0.14",
     "solid-js": "^0.10.1"
   }
 }

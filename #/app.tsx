@@ -1,21 +1,8 @@
-import { createState, onCleanup } from 'solid-js';
+import Counter from './counter.component';
+import './global.style';
 
 function App() {
-  const [state, setState] = createState({ counter: 0 });
-
-  const intervalId = setInterval(() => {
-    setState(state => ({ counter: state.counter + 1 }));
-  }, 1000);
-
-  onCleanup(() => {
-    clearInterval(intervalId);
-  });
-
-  return (
-    <div>
-      Counter <div>{(void 0, state.counter)}</div>
-    </div>
-  );
+  return <Counter />;
 }
 
 export default App;
