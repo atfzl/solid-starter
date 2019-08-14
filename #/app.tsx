@@ -1,8 +1,12 @@
-import Counter from './counter.component';
 import './global.style';
+import Routes from './routes';
 
 function App() {
-  return <Counter />;
+  return (
+    <div>
+      <Routes />
+    </div>
+  );
 }
 
 export default App;
