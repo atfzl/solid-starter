@@ -2,7 +2,7 @@ import * as history from 'history';
 import { createSignal } from 'solid-js';
 import { Match, Switch } from 'solid-js/dom';
 
-const [location, setLocation] = createSignal('/');
+const [location, setLocation] = createSignal(window.location.pathname);
 
 const browserHistory = history.createBrowserHistory();
 

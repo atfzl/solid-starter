@@ -1,8 +1,17 @@
 import { createState } from 'solid-js';
 
-const [loginState, setLoginState] = createState({
+export type LoginStatus = 'success' | 'pristine' | 'checking' | 'failure';
+
+interface State {
+  username: string;
+  password: string;
+  status: LoginStatus;
+}
+
+const [loginState, setLoginState] = createState<State>({
   username: '',
   password: '',
+  status: 'pristine',
 });
 
 export { loginState, setLoginState };
