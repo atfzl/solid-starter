@@ -6,8 +6,8 @@ const [location, setLocation] = createSignal(window.location.pathname);
 
 const browserHistory = history.createBrowserHistory();
 
-browserHistory.listen(location => {
-  setLocation(location.pathname);
+browserHistory.listen(e => {
+  setLocation(e.pathname);
 });
 
 function Route({ path, children }: { path: string; children: JSX.Element }) {

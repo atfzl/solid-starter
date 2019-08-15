@@ -1,4 +1,5 @@
 import Header from '#/components/header';
+import '#/effects/protected-routes';
 import { Route, RouteSwitch } from '#/router';
 import HomeRoute from './home';
 import LoginRoute from './login';
