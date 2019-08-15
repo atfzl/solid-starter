@@ -1,3 +1,4 @@
+import { history } from '#/router';
 import { fromEvent } from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { loginState, setLoginState } from './state';
@@ -7,7 +8,7 @@ export function formPipeline(formElement: HTMLFormElement) {
     .pipe(
       tap(e => e.preventDefault()),
       tap(() => setLoginState({ status: 'checking' })),
-      delay(2000),
+      delay(500),
       map(() => {
         return (
           loginState.password === 'Foobar2000#' &&
@@ -18,7 +19,7 @@ export function formPipeline(formElement: HTMLFormElement) {
     .subscribe(isLoggedIn => {
       if (isLoggedIn) {
         setLoginState({ status: 'success' });
-        console.log('login success');
+        history.push('/');
       } else {
         setLoginState({ status: 'failure' });
       }
@@ -32,6 +33,10 @@ export function usernamePipeline(element: HTMLInputElement) {
   ).subscribe(e => {
     setLoginState({ username: e.currentTarget.value });
   });
+
+  fromEvent(element, 'focus').subscribe(() => {
+    setLoginState({ status: 'pristine' });
+  });
 }
 
 export function passwordPipeline(element: HTMLInputElement) {
@@ -40,5 +45,9 @@ export function passwordPipeline(element: HTMLInputElement) {
     'change',
   ).subscribe(e => {
     setLoginState({ password: e.currentTarget.value });
+  });
+
+  fromEvent(element, 'focus').subscribe(() => {
+    setLoginState({ status: 'pristine' });
   });
 }

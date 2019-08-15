@@ -23,7 +23,6 @@ function Login() {
           margin-top: -20rem;
         `}
       >
-        <h1>Login</h1>
         <form forwardRef={formPipeline}>
           <input
             value={(void 0, loginState.username)}
