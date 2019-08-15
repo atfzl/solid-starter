@@ -4,8 +4,12 @@ export function appHeaderPipeline(element: HTMLElement) {
   const unlisten = history.listen(updateStyles);
 
   function updateStyles(location: { pathname: string }) {
+    /**
+     * stop the subscriber if component was unmounted
+     */
     if (!element) {
       unlisten();
+      return;
     }
 
     if (location.pathname === '/') {
