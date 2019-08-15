@@ -1,12 +1,13 @@
 import { history } from '#/router';
 import { fromEvent } from 'rxjs';
-import { delay, map, tap } from 'rxjs/operators';
+import { delay, map, tap, throttleTime } from 'rxjs/operators';
 import { loginState, setLoginState } from './state';
 
 export function formPipeline(formElement: HTMLFormElement) {
   fromEvent(formElement, 'submit')
     .pipe(
       tap(e => e.preventDefault()),
+      throttleTime(2000),
       tap(() => setLoginState({ status: 'checking' })),
       delay(500),
       map(() => {
