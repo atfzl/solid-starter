@@ -1,7 +1,9 @@
 import { injectGlobal } from 'emotion';
 
 injectGlobal`
- * {
+  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600&display=swap');
+
+  * {
     box-sizing: border-box;
   }
 
@@ -12,6 +14,7 @@ injectGlobal`
   }
 
   body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.5;
