@@ -1,4 +1,4 @@
-import { appHeaderPipeline } from '#/modules/header/pipelines';
+import { appHeaderPipeline } from '#/modules/header/pipeline';
 import { location } from '#/router';
 import { css } from 'emotion';
 import { Show } from 'solid-js/dom';

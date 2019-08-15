@@ -2,7 +2,7 @@ import {
   formPipeline,
   passwordPipeline,
   usernamePipeline,
-} from '#/modules/login/pipelines';
+} from '#/modules/login/pipeline';
 import { loginState } from '#/modules/login/state';
 import { css } from 'emotion';
 import { Match, Switch } from 'solid-js/dom';
