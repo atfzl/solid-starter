@@ -1,3 +1,4 @@
+import Spinner from '#/components/spinner';
 import {
   formPipeline,
   passwordPipeline,
@@ -45,7 +46,7 @@ function Login() {
       >
         <Switch>
           <Match when={(void 0, loginState.status === 'checking')}>
-            <div>loading...</div>
+            <Spinner />
           </Match>
           <Match when={(void 0, loginState.status === 'failure')}>
             <div

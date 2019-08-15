@@ -13,7 +13,7 @@ export function appHeaderPipeline(element: HTMLElement) {
     }
 
     if (location.pathname === '/') {
-      element.style.transform = 'translate(-550px, -160px) scale(1.5)';
+      element.style.transform = 'translate(-565px, -160px) scale(0.7)';
     } else {
       element.style.transform = 'none';
     }
