@@ -1,9 +1,10 @@
+import Link from '#/components/link';
 import { appHeaderPipeline } from '#/modules/header/pipeline';
 import { css } from 'emotion';
 
 function Header() {
   return (
-    <a
+    <Link
       href="/"
       forwardRef={appHeaderPipeline}
       className={css`
@@ -19,7 +20,7 @@ function Header() {
       `}
     >
       The Movie DB
-    </a>
+    </Link>
   );
 }
 

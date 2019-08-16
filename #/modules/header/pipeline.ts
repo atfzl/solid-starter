@@ -1,14 +1,7 @@
-import { history, location } from '#/router';
-import { fromEvent } from 'rxjs';
+import { location } from '#/router';
 import { createEffect } from 'solid-js';
 
 export function appHeaderPipeline(element: HTMLElement) {
-  fromEvent(element, 'click').subscribe(e => {
-    e.preventDefault();
-
-    history.push('/');
-  });
-
   createEffect(() => {
     const pathname = location();
 
