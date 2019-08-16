@@ -1,16 +1,10 @@
 import { appHeaderPipeline } from '#/modules/header/pipeline';
-import { history } from '#/router';
 import { css } from 'emotion';
 
 function Header() {
   return (
     <a
       href="/"
-      onClick={e => {
-        e.preventDefault();
-
-        history.push('/');
-      }}
       forwardRef={appHeaderPipeline}
       className={css`
         text-decoration: none;
