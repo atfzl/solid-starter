@@ -1,7 +1,7 @@
 import Header from '#/components/header';
 import '#/effects/protected-routes';
-import { location, Route, RouteSwitch } from '#/router';
-import { Show } from 'solid-js/dom';
+import { location } from '#/router';
+import { Match, Show, Switch } from 'solid-js/dom';
 import HomeRoute from './home';
 import LoginRoute from './login';
 
@@ -11,15 +11,14 @@ function Routes() {
       <Show when={(void 0, ['/', '/login'].includes(location()))}>
         <Header />
       </Show>
-
-      <RouteSwitch>
-        <Route path="/">
+      <Switch>
+        <Match when={(void 0, location() === '/')}>
           <HomeRoute />
-        </Route>
-        <Route path="/login">
+        </Match>
+        <Match when={(void 0, location() === '/login')}>
           <LoginRoute />
-        </Route>
-      </RouteSwitch>
+        </Match>
+      </Switch>
     </div>
   );
 }
