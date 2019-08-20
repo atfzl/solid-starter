@@ -1,4 +1,4 @@
-import { history } from '#/router';
+import { history } from '#/utils/router';
 import { fromEvent } from 'rxjs';
 import { delay, map, tap, throttleTime } from 'rxjs/operators';
 import { loginState, setLoginState } from './state';

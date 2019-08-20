@@ -1,4 +1,4 @@
-import { location } from '#/router';
+import { location } from '#/utils/router';
 import { createEffect } from 'solid-js';
 
 export function appHeaderPipeline(element: HTMLElement) {

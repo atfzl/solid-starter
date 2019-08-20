@@ -1,4 +1,4 @@
-import { history } from '#/router';
+import { history } from '#/utils/router';
 
 function Home() {
   return (
