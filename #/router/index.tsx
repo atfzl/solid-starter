@@ -9,4 +9,4 @@ browserHistory.listen(e => {
   setLocation(e.pathname);
 });
 
-export { location, setLocation, browserHistory as history };
+export { location, browserHistory as history };
