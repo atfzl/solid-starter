@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --hot --history-api-fallback --quiet --liveReload=false",
+    "storybook": "start-storybook -p 6006",
     "check-types": "tsc"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@storybook/html": "^5.1.11",
     "@types/history": "^4.7.2",
     "@types/webpack": "^4.32.1",
     "@types/webpack-env": "^1.14.0",
