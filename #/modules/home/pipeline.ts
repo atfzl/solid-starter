@@ -1,4 +1,4 @@
-import { fetchMovieListing } from '#/models/movieListing';
+import { fetchMovieListing } from '#/interfaces/movieListing';
 import { setHomeState } from './state';
 
 export function homeLoadPipeline() {

@@ -1,4 +1,4 @@
-import { MultiSearchResult } from '#/models/movieListing';
+import { MultiSearchResult } from '#/interfaces/movieListing';
 import { createState } from 'solid-js';
 
 interface State {

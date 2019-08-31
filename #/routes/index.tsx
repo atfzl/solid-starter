@@ -1,5 +1,5 @@
 import Header from '#/components/header';
-import '#/effects/protected-routes';
+import '#/modules/protected-routes/effects';
 import { location } from '#/utils/router';
 import { Match, Show, Switch } from 'solid-js/dom';
 import HomeRoute from './home';
