@@ -7041,10 +7041,10 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-solid-js@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.10.1.tgz#63a7b035ae3f0f3f79229731f7bf4e14ce240b8c"
-  integrity sha512-PcWBM/Cf8cf7QI2PQDOdPT/3oC6SZ+Cdq6ate/YtMidFZFL/kR7m1VdTnUrdBiqMRqcawp3L7GYpTbKq8QYm5g==
+solid-js@^0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.10.3.tgz#7c6ee1f380a7ab8e2bd2e02d262fe79f034a4909"
+  integrity sha512-lvCr+Jwrg17+5jKfgUdk0ZJKkQOpT+w/v6y3rF3V//bYSS7WK8Ujmr+T6i3Ez0pveTPqnTj/9J0NYruQSqlrPA==
 
 source-list-map@^2.0.0:
   version "2.0.1"
