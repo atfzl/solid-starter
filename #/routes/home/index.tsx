@@ -10,14 +10,14 @@ function Home() {
   return (
     <div
       className={css`
-        padding: 68px;
+        padding: 24px;
         display: flex;
         justify-content: space-between;
       `}
     >
       <div
         className={css`
-          padding: 16px;
+          width: 300px;
         `}
       >
         <Switch>
@@ -49,9 +49,18 @@ function Home() {
           </Match>
         </Switch>
       </div>
+      <div>
+        <input
+          className={css`
+            padding: 4px;
+            font-size: 12px;
+          `}
+          placeholder="Search Movies"
+        />
+      </div>
       <div
         className={css`
-          padding: 16px;
+          width: 300px;
         `}
       >
         <Switch>
