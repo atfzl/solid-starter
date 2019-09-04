@@ -18,9 +18,7 @@ function Header() {
           position: fixed;
           top: 180px;
           left: calc(50% - 100px);
-          transform: ${location() === '/'
-            ? 'translate(-565px, -160px) scale(0.7)'
-            : 'none'};
+          ${location() === '/' && 'transform: translate(0, -160px) scale(0.7);'}
         `)
       }
     >

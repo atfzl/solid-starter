@@ -1,10 +1,13 @@
-import 'spinkit/css/spinners/2-double-bounce.css';
+import { css } from 'emotion';
 
 function Spinner() {
   return (
-    <div class="sk-double-bounce">
-      <div class="sk-child  sk-double-bounce1" />
-      <div class="sk-child sk-double-bounce2" />
+    <div
+      className={css`
+        margin-top: 16px;
+      `}
+    >
+      loading...
     </div>
   );
 }
