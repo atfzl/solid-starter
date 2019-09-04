@@ -14,11 +14,14 @@ function Counter() {
 
   return (
     <div
-      className={css`
-        display: flex;
-        background-color: beige;
-        padding: 16px;
-      `}
+      className={
+        (void 0,
+        css`
+          display: flex;
+          padding: 16px;
+          background-color: ${state.counter % 2 === 0 ? 'beige' : 'cyan'};
+        `)
+      }
     >
       <div
         className={css`

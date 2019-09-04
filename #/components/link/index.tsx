@@ -1,12 +1,13 @@
 import { linkPipeline } from './pipeline';
 
-type Props = JSX.HTMLAttributes<HTMLAnchorElement>;
+type Props = JSX.IntrinsicElements['a'];
 
 function Link(props: Props) {
-  const { children, ref, ...rest } = props;
+  const { children, className, ref, ...rest } = props;
 
   return (
     <a
+      {...rest}
       forwardRef={(element: HTMLAnchorElement) => {
         linkPipeline(element);
 
@@ -14,9 +15,9 @@ function Link(props: Props) {
           (ref as any)(element);
         }
       }}
-      {...rest}
+      className={(void 0, props.className)}
     >
-      {children}
+      {(void 0, props.children)}
     </a>
   );
 }
