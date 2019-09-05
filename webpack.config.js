@@ -7,6 +7,8 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: !isProd ? 'development' : 'production',
 
+  devtool: 'source-map',
+
   entry: path.resolve(__dirname, '#'),
 
   output: {
