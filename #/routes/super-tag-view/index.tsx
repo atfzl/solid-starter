@@ -1,4 +1,5 @@
 import Tag from '#/components/tag';
+// import TaskComponent from '#/components/task';
 import { css } from 'emotion';
 
 function SuperTagView() {
@@ -26,84 +27,11 @@ function SuperTagView() {
         `}
       >
         <Tag type="greyed">All</Tag>
-        <Tag>next</Tag>
-        <Tag type="active">Home</Tag>
+        <Tag>Home</Tag>
+        <Tag type="active">next</Tag>
       </div>
-      <div>
-        <div
-          className={css`
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            user-select: none;
-          `}
-        >
-          <input
-            className={css`
-              position: relative;
-              top: -1px;
-            `}
-            type="checkbox"
-            checked={true}
-            id="task1"
-          />
-          <label
-            for="task1"
-            className={css`
-              display: flex;
-              margin-left: 6px;
-            `}
-          >
-            ktm insurance
-          </label>
-          <Tag
-            className={css`
-              font-size: 1rem;
-              margin-left: 8px;
-            `}
-            type="task"
-          >
-            next
-          </Tag>
-        </div>
-        <div
-          className={css`
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            user-select: none;
-          `}
-        >
-          <input
-            className={css`
-              position: relative;
-              top: -1px;
-            `}
-            type="checkbox"
-            id="task2"
-          />
-          <label
-            for="task2"
-            className={css`
-              display: flex;
-              margin-left: 6px;
-            `}
-          >
-            Thailand holiday booking
-          </label>
-          <Tag
-            className={css`
-              font-size: 1rem;
-              margin-left: 8px;
-            `}
-            type="task"
-          >
-            next
-          </Tag>
-        </div>
-      </div>
+      <div>{/* <TaskComponent />
+        <TaskComponent /> */}</div>
     </div>
   );
 }

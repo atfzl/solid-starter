@@ -7,4 +7,5 @@ export interface TaskModel {
   scheduledDate?: Date;
   projectId?: string;
   superTags: Record<string, true>;
+  checked?: boolean;
 }
