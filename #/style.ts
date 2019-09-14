@@ -28,5 +28,6 @@ injectGlobal`
     padding: 0;
     height: 100%;
     width: 100%;
+    -webkit-font-smoothing: antialiased;
   }
 `;

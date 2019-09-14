@@ -1,4 +1,5 @@
 import { css, cx } from 'emotion';
+import SuperTagContent from './super-tag-content';
 
 function Routes() {
   return (
@@ -12,12 +13,15 @@ function Routes() {
         className={css`
           flex: 0 0 240px;
           background-color: #f9fafa;
-          padding: 20px 16px;
+          padding: 36px 16px 0 16px;
+          border-right: 1px solid #f1f6f7;
         `}
       >
         <div
           className={css`
             font-weight: 500;
+            display: flex;
+            align-items: center;
           `}
         >
           <div
@@ -38,7 +42,7 @@ function Routes() {
       </div>
       <div
         className={css`
-          padding: 72px 48px 0 48px;
+          padding: 72px 52px 0 52px;
           width: 100%;
           display: flex;
           justify-content: center;
@@ -50,7 +54,7 @@ function Routes() {
             max-width: 1000px;
           `}
         >
-          body
+          <SuperTagContent />
         </div>
       </div>
     </div>
