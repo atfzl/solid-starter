@@ -1,5 +1,5 @@
 import { css, cx } from 'emotion';
-import SuperTagContent from './super-tag-content';
+import SuperTagView from './super-tag-view';
 
 function Routes() {
   return (
@@ -54,7 +54,7 @@ function Routes() {
             max-width: 1000px;
           `}
         >
-          <SuperTagContent />
+          <SuperTagView />
         </div>
       </div>
     </div>
