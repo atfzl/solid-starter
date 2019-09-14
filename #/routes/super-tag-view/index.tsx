@@ -1,6 +1,8 @@
 import Tag from '#/components/tag';
-// import TaskComponent from '#/components/task';
+import TaskComponent from '#/components/task';
+import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';
+import { For } from 'solid-js/dom';
 
 function SuperTagView() {
   return (
@@ -30,8 +32,11 @@ function SuperTagView() {
         <Tag>Home</Tag>
         <Tag type="active">next</Tag>
       </div>
-      <div>{/* <TaskComponent />
-        <TaskComponent /> */}</div>
+      <div>
+        <For each={(void 0, taskState.tasks)}>
+          {task => <TaskComponent data={(void 0, task)} />}
+        </For>
+      </div>
     </div>
   );
 }
