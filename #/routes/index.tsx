@@ -13,7 +13,7 @@ function Routes() {
         className={css`
           flex: 0 0 240px;
           background-color: #f9fafa;
-          padding: 36px 16px 0 16px;
+          padding: 36px 20px 0 20px;
           border-right: 1px solid #f1f6f7;
         `}
       >

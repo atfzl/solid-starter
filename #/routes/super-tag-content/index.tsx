@@ -25,8 +25,9 @@ function SuperTagContent() {
           color: grey;
         `}
       >
-        <Tag>All</Tag>
-        <Tag type="active">next</Tag>
+        <Tag type="greyed">All</Tag>
+        <Tag>next</Tag>
+        <Tag type="active">Home</Tag>
       </div>
       <div>
         <div
