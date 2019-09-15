@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/html';
-import TaskComponent, { Props } from './';
+import TaskComponent, { Props } from './task.component';
 
 storiesOf('TaskComponent', module).add('default', () => {
   const data: Props['data'] = {

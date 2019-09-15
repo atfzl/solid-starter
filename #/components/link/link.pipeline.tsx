@@ -1,4 +1,4 @@
-import { history } from '#/utils/router';
+import { history } from '#/utils/router.util';
 import { fromEvent } from 'rxjs';
 
 export function linkPipeline(anchorElement: HTMLAnchorElement) {

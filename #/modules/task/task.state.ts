@@ -1,4 +1,4 @@
-import { TaskModel } from '#/models/Task';
+import { TaskModel } from '#/models/task.model';
 import { createState } from 'solid-js';
 
 interface State {

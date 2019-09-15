@@ -1,5 +1,5 @@
-import Tag from '#/components/tag';
-import TaskComponent from '#/components/task';
+import Tag from '#/components/tag/tag.component';
+import TaskComponent from '#/components/task/task.component';
 import { taskActions } from '#/modules/task/task.action';
 import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';

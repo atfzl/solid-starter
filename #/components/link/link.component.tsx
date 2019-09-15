@@ -1,4 +1,4 @@
-import { linkPipeline } from './pipeline';
+import { linkPipeline } from './link.pipeline';
 
 type Props = JSX.IntrinsicElements['a'];
 

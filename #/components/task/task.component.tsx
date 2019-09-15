@@ -1,5 +1,5 @@
-import Tag from '#/components/tag';
-import { TaskModel } from '#/models/Task';
+import Tag from '#/components/tag/tag.component';
+import { TaskModel } from '#/models/task.model';
 import { css } from 'emotion';
 import { For } from 'solid-js/dom';
 
