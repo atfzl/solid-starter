@@ -1,12 +1,12 @@
 import { TaskModel } from '#/models/task.model';
 import { createState } from 'solid-js';
 
-interface State {
+export interface TaskState {
   tasks: TaskModel[];
   tags: Array<{ text: string; active: boolean }>;
 }
 
-const [taskState, setTaskState] = createState<State>({
+const [taskState, setTaskState] = createState<TaskState>({
   tasks: [
     {
       id: '1',
@@ -71,6 +71,10 @@ const [taskState, setTaskState] = createState<State>({
     },
     {
       text: '@neha',
+      active: false,
+    },
+    {
+      text: 'work',
       active: false,
     },
   ],

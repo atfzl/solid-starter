@@ -1,4 +1,4 @@
-import update from 'immutability-helper';
+import { immutableUpdate } from '#/utils/immutable-update.util';
 import * as R from 'ramda';
 import { setTaskState, taskState } from './task.state';
 
@@ -6,18 +6,33 @@ export const taskActions = {
   onTagClick(tagText: string) {
     const tagIndex = R.findIndex(t => t.text === tagText, taskState.tags);
 
-    const tag = taskState.tags[tagIndex];
+    const spec: any = {
+      tags: {},
+    };
 
-    setTaskState(state =>
-      update(state, {
-        tags: {
-          [tagIndex]: {
-            $merge: {
-              active: !tag.active,
-            },
-          },
+    taskState.tags.forEach((tag, i) => {
+      spec.tags[i] = {
+        $merge: {
+          active: i === tagIndex ? !tag.active : false,
         },
-      }),
-    );
+      };
+    });
+
+    setTaskState(immutableUpdate(spec));
+  },
+  onAllTagClick() {
+    const spec: any = {
+      tags: {},
+    };
+
+    taskState.tags.forEach((_tag, i) => {
+      spec.tags[i] = {
+        $merge: {
+          active: false,
+        },
+      };
+    });
+
+    setTaskState(immutableUpdate(spec));
   },
 };

@@ -29,6 +29,19 @@ function SuperTagView() {
           color: grey;
         `}
       >
+        {() => (
+          <Tag
+            onClick={taskActions.onAllTagClick}
+            type={
+              (void 0,
+              taskState.tags.filter(tag => tag.active).length === 0
+                ? 'greyed'
+                : undefined)
+            }
+          >
+            All
+          </Tag>
+        )}
         <For each={(void 0, taskState.tags)}>
           {tag => (
             <Tag
