@@ -4,14 +4,13 @@ type DivProps = JSX.IntrinsicElements['div'];
 
 interface Props extends DivProps {
   type?: 'active' | 'greyed' | 'task';
+  onClick?: DivProps['onClick'];
 }
 
 function Tag(props: Props) {
-  const { children, type, className, ...rest } = props;
-
   return (
     <div
-      {...rest}
+      onClick={props.onClick}
       className={cx(
         css`
           cursor: initial;

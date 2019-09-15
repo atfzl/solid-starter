@@ -1,5 +1,6 @@
 import Tag from '#/components/tag';
 import TaskComponent from '#/components/task';
+import { taskActions } from '#/modules/task/task.action';
 import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';
 import { For } from 'solid-js/dom';
@@ -28,9 +29,23 @@ function SuperTagView() {
           color: grey;
         `}
       >
-        <Tag type="greyed">All</Tag>
-        <Tag>Home</Tag>
-        <Tag type="active">next</Tag>
+        <For each={(void 0, taskState.tags)}>
+          {tag => (
+            <Tag
+              onClick={() => taskActions.onTagClick(tag.text)}
+              type={
+                (void 0,
+                tag.active
+                  ? tag.text === 'All'
+                    ? 'greyed'
+                    : 'active'
+                  : undefined)
+              }
+            >
+              {(void 0, tag.text)}
+            </Tag>
+          )}
+        </For>
       </div>
       <div>
         <For each={(void 0, taskState.tasks)}>

@@ -3,6 +3,7 @@ import { createState } from 'solid-js';
 
 interface State {
   tasks: TaskModel[];
+  tags: Array<{ text: string; active: boolean }>;
 }
 
 const [taskState, setTaskState] = createState<State>({
@@ -29,6 +30,20 @@ const [taskState, setTaskState] = createState<State>({
       superTags: {
         next: true,
       },
+    },
+  ],
+  tags: [
+    {
+      text: 'All',
+      active: true,
+    },
+    {
+      text: 'next',
+      active: false,
+    },
+    {
+      text: 'Home',
+      active: true,
     },
   ],
 });
