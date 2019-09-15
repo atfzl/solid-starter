@@ -26,6 +26,30 @@ const [taskState, setTaskState] = createState<State>({
       checklists: [],
       tags: {
         home: true,
+        next: true,
+      },
+      superTags: {
+        next: true,
+      },
+    },
+    {
+      id: '3',
+      text: 'swap phone with neha',
+      checklists: [],
+      tags: {
+        home: true,
+        '@neha': true,
+      },
+      superTags: {
+        next: true,
+      },
+    },
+    {
+      id: '4',
+      text: 'engine docker build performance',
+      checklists: [],
+      tags: {
+        work: true,
       },
       superTags: {
         next: true,
@@ -34,16 +58,20 @@ const [taskState, setTaskState] = createState<State>({
   ],
   tags: [
     {
-      text: 'All',
-      active: true,
-    },
-    {
       text: 'next',
       active: false,
     },
     {
-      text: 'Home',
+      text: 'home',
       active: true,
+    },
+    {
+      text: '@sakib',
+      active: false,
+    },
+    {
+      text: '@neha',
+      active: false,
     },
   ],
 });

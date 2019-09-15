@@ -8,6 +8,8 @@ export interface Props {
 }
 
 function TaskComponent(props: Props) {
+  const inputId = `task-${props.data.id}`;
+
   return (
     <div
       className={css`
@@ -25,10 +27,10 @@ function TaskComponent(props: Props) {
         `}
         type="checkbox"
         checked={(void 0, props.data.checked)}
-        id="task1"
+        id={inputId}
       />
       <label
-        for="task1"
+        for={inputId}
         className={css`
           display: flex;
           margin-left: 6px;

@@ -33,14 +33,7 @@ function SuperTagView() {
           {tag => (
             <Tag
               onClick={() => taskActions.onTagClick(tag.text)}
-              type={
-                (void 0,
-                tag.active
-                  ? tag.text === 'All'
-                    ? 'greyed'
-                    : 'active'
-                  : undefined)
-              }
+              type={(void 0, tag.active ? 'active' : undefined)}
             >
               {(void 0, tag.text)}
             </Tag>
@@ -48,7 +41,20 @@ function SuperTagView() {
         </For>
       </div>
       <div>
-        <For each={(void 0, taskState.tasks)}>
+        <For
+          each={
+            (void 0,
+            taskState.tasks.filter(task => {
+              const activeTagsText = taskState.tags
+                .filter(tag => tag.active)
+                .map(tag => tag.text);
+
+              console.log('active', activeTagsText);
+
+              return activeTagsText.every(tagText => task.tags[tagText]);
+            }))
+          }
+        >
           {task => <TaskComponent data={(void 0, task)} />}
         </For>
       </div>
