@@ -2,7 +2,7 @@ import { linkPipeline } from './link.pipeline';
 
 type Props = JSX.IntrinsicElements['a'];
 
-function Link(props: Props) {
+function LinkComponent(props: Props) {
   const { children, className, ref, ...rest } = props;
 
   return (
@@ -22,4 +22,4 @@ function Link(props: Props) {
   );
 }
 
-export default Link;
+export default LinkComponent;

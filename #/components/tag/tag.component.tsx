@@ -7,7 +7,7 @@ interface Props extends DivProps {
   onClick?: DivProps['onClick'];
 }
 
-function Tag(props: Props) {
+function TagComponent(props: Props) {
   return (
     <div
       onClick={props.onClick}
@@ -75,4 +75,4 @@ function Tag(props: Props) {
   );
 }
 
-export default Tag;
+export default TagComponent;

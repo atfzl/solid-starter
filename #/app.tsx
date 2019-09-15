@@ -1,5 +1,5 @@
 import { css } from 'emotion';
-import Routes from './routes';
+import Routes from './routes/root.route';
 import './style';
 
 function App() {

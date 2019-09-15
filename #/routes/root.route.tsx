@@ -1,5 +1,5 @@
 import { css, cx } from 'emotion';
-import SuperTagView from './super-tag-view';
+import SuperTagView from './components/super-tag-view/super-tag-view.component';
 
 function Routes() {
   return (
