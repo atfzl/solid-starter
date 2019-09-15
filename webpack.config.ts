@@ -1,6 +1,6 @@
-const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
 
 const isProd = process.env.NODE_ENV === 'production';
 
