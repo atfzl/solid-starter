@@ -49,8 +49,6 @@ function SuperTagView() {
                 .filter(tag => tag.active)
                 .map(tag => tag.text);
 
-              console.log('active', activeTagsText);
-
               return activeTagsText.every(tagText => task.tags[tagText]);
             }))
           }
