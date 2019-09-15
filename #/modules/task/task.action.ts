@@ -35,4 +35,19 @@ export const taskActions = {
 
     setTaskState(immutableUpdate(spec));
   },
+  onCheckboxClick(id: string, checked: boolean) {
+    const taskIndex = R.findIndex(t => t.id === id, taskState.tasks);
+
+    setTaskState(
+      immutableUpdate({
+        tasks: {
+          [taskIndex]: {
+            checked: {
+              $set: checked,
+            },
+          },
+        },
+      }),
+    );
+  },
 };

@@ -66,7 +66,12 @@ function SuperTagView() {
             }))
           }
         >
-          {task => <TaskComponent data={(void 0, task)} />}
+          {task => (
+            <TaskComponent
+              onCheckboxClick={taskActions.onCheckboxClick}
+              data={(void 0, task)}
+            />
+          )}
         </For>
       </div>
     </div>

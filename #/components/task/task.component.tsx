@@ -5,6 +5,7 @@ import { For } from 'solid-js/dom';
 
 export interface Props {
   data: TaskModel;
+  onCheckboxClick: (id: string, checked: boolean) => void;
 }
 
 function TaskComponent(props: Props) {
@@ -25,6 +26,9 @@ function TaskComponent(props: Props) {
           position: relative;
           top: -1px;
         `}
+        onChange={e => {
+          props.onCheckboxClick(props.data.id, (e.target as any).checked);
+        }}
         type="checkbox"
         checked={(void 0, props.data.checked)}
         id={inputId}

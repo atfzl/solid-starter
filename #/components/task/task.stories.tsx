@@ -14,5 +14,5 @@ storiesOf('TaskComponent', module).add('default', () => {
     },
   };
 
-  return <TaskComponent data={data} />;
+  return <TaskComponent onCheckboxClick={console.log} data={data} />;
 });
