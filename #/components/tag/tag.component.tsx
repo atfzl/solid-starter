@@ -4,13 +4,14 @@ type DivProps = JSX.IntrinsicElements['div'];
 
 interface Props extends DivProps {
   type?: 'active' | 'greyed' | 'task';
-  onClick?: DivProps['onClick'];
 }
 
 function TagComponent(props: Props) {
+  const { type, className, ...rest } = props;
+
   return (
     <div
-      onClick={props.onClick}
+      {...(void 0, rest)}
       className={cx(
         css`
           cursor: initial;
@@ -69,9 +70,7 @@ function TagComponent(props: Props) {
         `,
         props.className,
       )}
-    >
-      {(void 0, props.children)}
-    </div>
+    ></div>
   );
 }
 

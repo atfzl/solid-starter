@@ -7141,9 +7141,9 @@ sockjs@0.3.19:
     uuid "^3.0.1"
 
 solid-js@^0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.10.3.tgz#7c6ee1f380a7ab8e2bd2e02d262fe79f034a4909"
-  integrity sha512-lvCr+Jwrg17+5jKfgUdk0ZJKkQOpT+w/v6y3rF3V//bYSS7WK8Ujmr+T6i3Ez0pveTPqnTj/9J0NYruQSqlrPA==
+  version "0.10.8"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.10.8.tgz#13bdd3ae67af2a53c10f72c6590395e1dfd23e8a"
+  integrity sha512-VrghZMzAjc9tpa+EMuK2jkCVW4RLWz2VmNtPI/OFJhf3H/4ELjUEEwpZ4r6ODqDLAOjOSImoC87bRGPq4OdwyA==
 
 source-list-map@^2.0.0:
   version "2.0.1"
