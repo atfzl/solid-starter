@@ -29,26 +29,22 @@ function SuperTagView() {
           color: grey;
         `}
       >
-        {() => (
-          <Tag
-            onClick={taskActions.onAllTagClick}
-            type={
-              (void 0,
-              taskState.tags.filter(tag => tag.active).length === 0
-                ? 'greyed'
-                : undefined)
-            }
-          >
-            All
-          </Tag>
-        )}
+        <Tag
+          onClick={taskActions.onAllTagClick}
+          type={
+            (void 0,
+            taskState.tags.every(tag => !tag.active) ? 'greyed' : undefined)
+          }
+        >
+          All
+        </Tag>
         <For each={(void 0, taskState.tags)}>
           {tag => (
             <Tag
               onClick={() => taskActions.onTagClick(tag.text)}
               type={(void 0, tag.active ? 'active' : undefined)}
             >
-              {(void 0, tag.text)}
+              <div>{(void 0, tag.text)}</div>
             </Tag>
           )}
         </For>
