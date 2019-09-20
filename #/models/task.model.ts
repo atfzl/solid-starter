@@ -9,3 +9,8 @@ export interface TaskModel {
   superTags: Record<string, true>;
   checked?: boolean;
 }
+
+export interface TagModel {
+  text: string;
+  active: boolean;
+}

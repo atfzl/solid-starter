@@ -1,53 +1,16 @@
-import { immutableUpdate } from '#/utils/immutable-update.util';
-import * as R from 'ramda';
-import { setTaskState, taskState } from './task.state';
+import { TagModel, TaskModel } from '#/models/task.model';
+import { setTaskState } from './task.state';
 
 export const taskActions = {
   onTagClick(tagText: string) {
-    const tagIndex = R.findIndex(t => t.text === tagText, taskState.tags);
-
-    const spec: any = {
-      tags: {},
-    };
-
-    taskState.tags.forEach((tag, i) => {
-      spec.tags[i] = {
-        $merge: {
-          active: i === tagIndex ? !tag.active : false,
-        },
-      };
+    setTaskState('tags', {}, (tag: TagModel) => {
+      return { active: tag.text === tagText ? !tag.active : false };
     });
-
-    setTaskState(immutableUpdate(spec));
   },
   onAllTagClick() {
-    const spec: any = {
-      tags: {},
-    };
-
-    taskState.tags.forEach((_tag, i) => {
-      spec.tags[i] = {
-        $merge: {
-          active: false,
-        },
-      };
-    });
-
-    setTaskState(immutableUpdate(spec));
+    setTaskState('tags', {}, { active: false });
   },
   onCheckboxClick(id: string, checked: boolean) {
-    const taskIndex = R.findIndex(t => t.id === id, taskState.tasks);
-
-    setTaskState(
-      immutableUpdate({
-        tasks: {
-          [taskIndex]: {
-            checked: {
-              $set: checked,
-            },
-          },
-        },
-      }),
-    );
+    setTaskState('tasks', (task: TaskModel) => task.id === id, { checked });
   },
 };

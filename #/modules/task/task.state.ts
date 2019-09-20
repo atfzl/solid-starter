@@ -1,9 +1,9 @@
-import { TaskModel } from '#/models/task.model';
+import { TagModel, TaskModel } from '#/models/task.model';
 import { createState } from 'solid-js';
 
 export interface TaskState {
   tasks: TaskModel[];
-  tags: Array<{ text: string; active: boolean }>;
+  tags: TagModel[];
 }
 
 const [taskState, setTaskState] = createState<TaskState>({
