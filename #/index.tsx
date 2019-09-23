@@ -2,7 +2,7 @@ import { createRoot } from 'solid-js';
 import App from './app';
 
 const renderApp = () => {
-  const appElement = document.getElementById('app')!;
+  const appElement = document.getElementById('root')!;
 
   while (appElement.firstChild) {
     appElement.removeChild(appElement.firstChild);

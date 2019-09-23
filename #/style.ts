@@ -8,7 +8,7 @@ injectGlobal`
     box-sizing: border-box;
   }
 
-  #app {
+  #root {
     height: 100%;
     width: 100%;
   }
