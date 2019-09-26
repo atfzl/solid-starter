@@ -15,6 +15,6 @@ if (module.hot) {
   module.hot.accept();
 
   renderApp();
+} else {
+  renderApp();
 }
-
-export default void 0;
