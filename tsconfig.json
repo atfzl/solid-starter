@@ -14,7 +14,7 @@
     "noImplicitThis": true,
     "isolatedModules": true,
     "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "public",
     "lib": ["es6", "es7", "es2017", "dom"],
     "typeRoots": [
       "./node_modules/@types",
