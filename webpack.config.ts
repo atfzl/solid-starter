@@ -32,4 +32,10 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({ template: '#/index.html' }),
   ],
+
+  devServer: {
+    stats: 'minimal',
+    hot: true,
+    historyApiFallback: true,
+  },
 };

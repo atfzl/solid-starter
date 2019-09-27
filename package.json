@@ -5,7 +5,7 @@
   "author": "Atif Afzal <atif5801@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --hot --history-api-fallback --quiet --liveReload=false",
+    "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "storybook": "start-storybook -p 6006",
     "check-types": "tsc"
