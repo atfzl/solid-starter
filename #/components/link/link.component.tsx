@@ -1,4 +1,4 @@
-import { linkPipeline } from './link.pipeline';
+import { history } from '#/utils/router.util';
 
 type Props = JSX.IntrinsicElements['a'];
 
@@ -8,12 +8,18 @@ function LinkComponent(props: Props) {
   return (
     <a
       {...rest}
-      forwardRef={(element: HTMLAnchorElement) => {
-        linkPipeline(element);
+      onClick={e => {
+        e.preventDefault();
 
-        if (ref) {
-          (ref as any)(element);
+        const anchorElement = e.target as HTMLAnchorElement;
+
+        const href = anchorElement.getAttribute('href');
+
+        if (!href) {
+          return;
         }
+
+        history.push(href);
       }}
       className={(void 0, props.className)}
     >
