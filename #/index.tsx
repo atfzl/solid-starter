@@ -1,4 +1,4 @@
-import { createRoot } from 'solid-js';
+import { render } from 'solid-js/dom';
 import App from './app';
 
 const renderApp = () => {
@@ -8,7 +8,7 @@ const renderApp = () => {
     appElement.removeChild(appElement.firstChild);
   }
 
-  createRoot(() => appElement.appendChild(<App /> as HTMLElement));
+  render(() => <App />, appElement);
 };
 
 if (module.hot) {
