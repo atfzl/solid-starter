@@ -31,7 +31,7 @@
     "@types/webpack-bundle-analyzer": "^2.13.3",
     "@types/webpack-env": "^1.14.0",
     "babel-loader": "^8.0.6",
-    "babel-preset-solid": "^0.1.0",
+    "babel-preset-solid": "^0.1.1",
     "css-loader": "^3.2.0",
     "fork-ts-checker-webpack-plugin": "^1.5.0",
     "html-webpack-plugin": "^3.2.0",
@@ -54,6 +54,6 @@
     "history": "^4.10.1",
     "ramda": "^0.26.1",
     "rxjs": "^6.5.3",
-    "solid-js": "^0.10.9"
+    "solid-js": "^0.11.4"
   }
 }

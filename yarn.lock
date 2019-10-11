@@ -1966,7 +1966,7 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
     babel-plugin-transform-undefined-to-void "^6.9.4"
     lodash "^4.17.11"
 
-babel-preset-solid@^0.1.0:
+babel-preset-solid@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/babel-preset-solid/-/babel-preset-solid-0.1.1.tgz#ba873f98cfba21a20a5863c62b86b40c1039d657"
   integrity sha512-oLUeomK8zdRhoyrA2sIWs/BTB28fSOnOvH46zcdmY6UZZJv1aIXW8vrbA3jsA/NTVhBCLeF2Jsqk8uc60b8etw==
@@ -7286,10 +7286,10 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-solid-js@^0.10.9:
-  version "0.10.11"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.10.11.tgz#beae927d2b401e7695dbc472b50e10d1fd963956"
-  integrity sha512-JNyuiWQElgrWous/W1uOwwXgAE64EF8yd+d3cXvsKebPtxhJjIOk/d14R3Turh7fr/M5sME7Ecg4wyQWYiFuRg==
+solid-js@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.11.4.tgz#a9db7bce95d80733e3670eb4b68d33f4e101d17c"
+  integrity sha512-v/WvZKYjYmel2tp1A3KW+d1G0Qc93Cni4sbbiQxtJr6/3qWjbOy7gcWVjZR0Em2YwrUPJqbkezawqIH8FKskiA==
 
 source-list-map@^2.0.0:
   version "2.0.1"
