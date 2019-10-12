@@ -54,7 +54,7 @@
     "dropbox": "^4.0.30",
     "emotion": "^10.0.17",
     "history": "^4.10.1",
-    "pouchdb": "^7.1.1",
+    "pouchdb-browser": "^7.1.1",
     "rxjs": "^6.5.3",
     "solid-js": "^0.11.4"
   }

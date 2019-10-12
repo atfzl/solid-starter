@@ -3,7 +3,7 @@ declare module '@storybook/html' {
   export = x;
 }
 
-declare module 'pouchdb' {
+declare module 'pouchdb-browser' {
   const x: PouchDB.Static;
   export default x;
 }
