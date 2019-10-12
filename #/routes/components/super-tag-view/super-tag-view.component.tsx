@@ -1,11 +1,17 @@
 import Tag from '#/components/tag/tag.component';
 import TaskComponent from '#/components/task/task.component';
 import { taskActions } from '#/modules/task/task.action';
+import { activateTaskPipelines } from '#/modules/task/task.pipelines';
 import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';
+import { afterEffects } from 'solid-js';
 import { For } from 'solid-js/dom';
 
 function SuperTagView() {
+  afterEffects(() => {
+    activateTaskPipelines();
+  });
+
   return (
     <div
       className={css`
