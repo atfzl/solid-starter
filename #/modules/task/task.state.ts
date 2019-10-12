@@ -1,4 +1,5 @@
 import { TagModel, TaskDoc, TaskModel } from '#/models/task.model';
+import { getDropboxDB } from '#/services/dropbox.service';
 import masterDB from '#/services/pouchdb.service';
 import { createState } from 'solid-js';
 
@@ -42,5 +43,9 @@ masterDB
   .on('change', e => {
     setTaskState('tasks', (task: TaskDoc) => task._id === e.id, e.doc);
   });
+
+getDropboxDB().subscribe(response => {
+  console.log(response);
+});
 
 export { taskState, setTaskState };

@@ -51,6 +51,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "dropbox": "^4.0.30",
     "emotion": "^10.0.17",
     "history": "^4.10.1",
     "pouchdb": "^7.1.1",
