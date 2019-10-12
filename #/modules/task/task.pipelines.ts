@@ -3,6 +3,8 @@ import { getDropboxDB } from '#/services/dropbox.service';
 import masterDB from '#/services/pouchdb.service';
 import { setTaskState } from './task.state';
 
+const MemoryStream = require('memorystream');
+
 const taskPipelines = [
   () => {
     masterDB.allDocs<TaskModel>({ include_docs: true }).then(result => {
@@ -19,6 +21,18 @@ const taskPipelines = [
   () => {
     return getDropboxDB().subscribe(response => {
       console.log(response);
+    });
+  },
+  () => {
+    const stream = new MemoryStream();
+
+    var dumpedString = '';
+    stream.on('data', function(chunk: any) {
+      dumpedString += chunk.toString();
+    });
+
+    (masterDB as any).dump(stream).then(function() {
+      console.log('Yay, I have a dumpedString: ' + dumpedString);
     });
   },
 ];

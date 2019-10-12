@@ -44,7 +44,7 @@
     "react-dom": "^16.9.0",
     "style-loader": "^1.0.0",
     "ts-node": "^8.4.1",
-    "typescript": "^3.7.0-beta",
+    "typescript": "^3.6.4",
     "webpack": "^4.40.2",
     "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.3.9",
@@ -54,7 +54,9 @@
     "dropbox": "^4.0.30",
     "emotion": "^10.0.17",
     "history": "^4.10.1",
+    "memorystream": "^0.3.1",
     "pouchdb-browser": "^7.1.1",
+    "pouchdb-replication-stream": "^1.2.9",
     "rxjs": "^6.5.3",
     "solid-js": "^0.11.4"
   }

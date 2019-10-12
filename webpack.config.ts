@@ -23,6 +23,10 @@ module.exports = {
     modules: ['node_modules', './'],
   },
 
+  externals: {
+    'pouchdb-promise': 'Promise',
+  },
+
   module: {
     rules: [
       { test: /\.(ts|js)x?$/, loader: 'babel-loader', exclude: /node_modules/ },
