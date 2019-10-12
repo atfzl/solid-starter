@@ -1,5 +1,6 @@
+export type TaskDoc = PouchDB.Core.ExistingDocument<TaskModel>;
+
 export interface TaskModel {
-  id: string;
   text: string;
   checklists: Array<{ text: string }>;
   note?: string;

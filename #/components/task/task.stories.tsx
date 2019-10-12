@@ -3,7 +3,8 @@ import TaskComponent, { Props } from './task.component';
 
 storiesOf('TaskComponent', module).add('default', () => {
   const data: Props['data'] = {
-    id: 'id',
+    _id: '12',
+    _rev: '',
     text: 'buy ktm insurance policy',
     checklists: [],
     tags: {

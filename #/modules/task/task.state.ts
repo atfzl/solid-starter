@@ -1,61 +1,14 @@
-import { TagModel, TaskModel } from '#/models/task.model';
+import { TagModel, TaskDoc, TaskModel } from '#/models/task.model';
+import masterDB from '#/services/pouchdb.service';
 import { createState } from 'solid-js';
 
 export interface TaskState {
-  tasks: TaskModel[];
+  tasks: TaskDoc[];
   tags: TagModel[];
 }
 
 const [taskState, setTaskState] = createState<TaskState>({
-  tasks: [
-    {
-      id: '1',
-      text: 'buy ktm insurance policy',
-      checklists: [],
-      tags: {
-        '@sakib': true,
-        home: true,
-      },
-      superTags: {
-        inbox: true,
-      },
-    },
-    {
-      id: '2',
-      text: 'thailand holiday booking',
-      checklists: [],
-      tags: {
-        home: true,
-        next: true,
-      },
-      superTags: {
-        next: true,
-      },
-    },
-    {
-      id: '3',
-      text: 'swap phone with neha',
-      checklists: [],
-      tags: {
-        home: true,
-        '@neha': true,
-      },
-      superTags: {
-        next: true,
-      },
-    },
-    {
-      id: '4',
-      text: 'engine docker build performance',
-      checklists: [],
-      tags: {
-        work: true,
-      },
-      superTags: {
-        next: true,
-      },
-    },
-  ],
+  tasks: [],
   tags: [
     {
       text: 'next',
@@ -79,5 +32,15 @@ const [taskState, setTaskState] = createState<TaskState>({
     },
   ],
 });
+
+masterDB.allDocs<TaskModel>({ include_docs: true }).then(result => {
+  setTaskState({ tasks: result.rows.map(a => a.doc) });
+});
+
+masterDB
+  .changes({ since: 'now', live: true, include_docs: true })
+  .on('change', e => {
+    setTaskState('tasks', (task: TaskDoc) => task._id === e.id, e.doc);
+  });
 
 export { taskState, setTaskState };

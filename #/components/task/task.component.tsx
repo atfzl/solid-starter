@@ -1,15 +1,15 @@
 import Tag from '#/components/tag/tag.component';
-import { TaskModel } from '#/models/task.model';
+import { TaskDoc } from '#/models/task.model';
 import { css } from 'emotion';
 import { For } from 'solid-js/dom';
 
 export interface Props {
-  data: TaskModel;
+  data: TaskDoc;
   onCheckboxClick: (id: string, checked: boolean) => void;
 }
 
 function TaskComponent(props: Props) {
-  const inputId = `task-${props.data.id}`;
+  const inputId = `task-${props.data._id}`;
 
   return (
     <div
@@ -27,7 +27,7 @@ function TaskComponent(props: Props) {
           top: -1px;
         `}
         onChange={e => {
-          props.onCheckboxClick(props.data.id, (e.target as any).checked);
+          props.onCheckboxClick(props.data._id, (e.target as any).checked);
         }}
         type="checkbox"
         checked={(void 0, props.data.checked)}
