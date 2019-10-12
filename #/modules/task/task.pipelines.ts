@@ -1,9 +1,8 @@
 import { TaskDoc, TaskModel } from '#/models/task.model';
 import { getDropboxDB } from '#/services/dropbox.service';
 import masterDB from '#/services/pouchdb.service';
+import * as MemoryStream from 'memorystream';
 import { setTaskState } from './task.state';
-
-const MemoryStream = require('memorystream');
 
 const taskPipelines = [
   () => {
@@ -32,7 +31,7 @@ const taskPipelines = [
     });
 
     (masterDB as any).dump(stream).then(function() {
-      console.log('Yay, I have a dumpedString: ' + dumpedString);
+      console.log(dumpedString);
     });
   },
 ];
