@@ -44,5 +44,6 @@ module.exports = {
     stats: 'minimal',
     hot: true,
     historyApiFallback: true,
+    host: '0.0.0.0',
   },
 };
