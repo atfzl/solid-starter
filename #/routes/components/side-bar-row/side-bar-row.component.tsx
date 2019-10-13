@@ -11,8 +11,6 @@ function SideBarRow(props: Props) {
       className={css`
         display: flex;
         margin-bottom: 16px;
-        width: 100%;
-        cursor: pointer;
       `}
     >
       <i className={cx('material-icons')}>{props.icon}</i>
