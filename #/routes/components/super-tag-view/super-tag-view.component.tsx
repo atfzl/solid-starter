@@ -59,13 +59,15 @@ function SuperTagView() {
         <For
           each={
             (void 0,
-            taskState.tasks.filter(task => {
-              const activeTagsText = taskState.tags
-                .filter(tag => tag.active)
-                .map(tag => tag.text);
+            taskState.tasks
+              .filter(task => task.superTags[taskState.superTag])
+              .filter(task => {
+                const activeTagsText = taskState.tags
+                  .filter(tag => tag.active)
+                  .map(tag => tag.text);
 
-              return activeTagsText.every(tagText => task.tags[tagText]);
-            }))
+                return activeTagsText.every(tagText => task.tags[tagText]);
+              }))
           }
         >
           {task => (

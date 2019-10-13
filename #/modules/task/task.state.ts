@@ -1,9 +1,10 @@
-import { TagModel, TaskDoc } from '#/models/task.model';
+import { SuperTag, TagModel, TaskDoc } from '#/models/task.model';
 import { createState } from 'solid-js';
 
 export interface TaskState {
   tasks: TaskDoc[];
   tags: TagModel[];
+  superTag: SuperTag;
 }
 
 const [taskState, setTaskState] = createState<TaskState>({
@@ -30,6 +31,7 @@ const [taskState, setTaskState] = createState<TaskState>({
       active: false,
     },
   ],
+  superTag: 'inbox',
 });
 
 export { taskState, setTaskState };

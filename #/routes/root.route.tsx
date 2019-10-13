@@ -1,3 +1,4 @@
+import { taskActions } from '#/modules/task/task.action';
 import { css } from 'emotion';
 import SideBarRow from './components/side-bar-row/side-bar-row.component';
 import SuperTagView from './components/super-tag-view/super-tag-view.component';
@@ -26,8 +27,20 @@ function Routes() {
             flex-direction: column;
           `}
         >
-          <SideBarRow icon="inbox">Inbox</SideBarRow>
-          <SideBarRow icon="flash_on">Next</SideBarRow>
+          <SideBarRow
+            onClick={taskActions.onSuperTagClick}
+            id="inbox"
+            icon="inbox"
+          >
+            Inbox
+          </SideBarRow>
+          <SideBarRow
+            onClick={taskActions.onSuperTagClick}
+            id="next"
+            icon="flash_on"
+          >
+            Next
+          </SideBarRow>
         </div>
       </div>
       <div
