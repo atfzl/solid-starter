@@ -1,9 +1,8 @@
 import { SuperTag } from '#/models/task.model';
-import { css, cx } from 'emotion';
+import { css } from 'emotion';
 
 interface Props {
   children: string;
-  icon: string;
   onClick: (id: SuperTag) => void;
   id: SuperTag;
 }
@@ -18,7 +17,6 @@ function SideBarRow(props: Props) {
       `}
       onClick={() => props.onClick(props.id)}
     >
-      <i className={cx('material-icons')}>{props.icon}</i>
       <div
         className={css`
           margin-left: 6px;

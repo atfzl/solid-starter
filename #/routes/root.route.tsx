@@ -27,18 +27,10 @@ function Routes() {
             flex-direction: column;
           `}
         >
-          <SideBarRow
-            onClick={taskActions.onSuperTagClick}
-            id="inbox"
-            icon="inbox"
-          >
+          <SideBarRow onClick={taskActions.onSuperTagClick} id="inbox">
             Inbox
           </SideBarRow>
-          <SideBarRow
-            onClick={taskActions.onSuperTagClick}
-            id="next"
-            icon="flash_on"
-          >
+          <SideBarRow onClick={taskActions.onSuperTagClick} id="next">
             Next
           </SideBarRow>
         </div>
