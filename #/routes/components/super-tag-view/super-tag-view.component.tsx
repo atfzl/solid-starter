@@ -27,7 +27,7 @@ function SuperTagView() {
           user-select: none;
         `}
       >
-        Inbox
+        {(void 0, taskState.superTag)}
       </div>
       <div
         className={css`
