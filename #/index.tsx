@@ -1,20 +1,10 @@
-import { render } from 'solid-js/dom';
-import App from './app';
+import '#/style';
+import * as CodeMirror from 'codemirror';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/mode/javascript/javascript';
 
-const renderApp = () => {
-  const appElement = document.getElementById('root')!;
-
-  while (appElement.firstChild) {
-    appElement.removeChild(appElement.firstChild);
-  }
-
-  render(() => <App />, appElement);
-};
-
-if (module.hot) {
-  module.hot.accept();
-
-  renderApp();
-} else {
-  renderApp();
-}
+CodeMirror(document.getElementById('root')!, {
+  value: 'function myScript(){return 100;}\n',
+  mode: 'javascript',
+  readOnly: false,
+});

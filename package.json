@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.6.0",
     "@storybook/html": "~5.1.11",
+    "@types/codemirror": "^0.0.79",
     "@types/history": "^4.7.3",
     "@types/html-webpack-plugin": "^3.2.1",
     "@types/pouchdb": "^6.4.0",
@@ -51,6 +52,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
+    "codemirror": "^5.49.0",
     "dropbox": "^4.0.30",
     "emotion": "^10.0.17",
     "history": "^4.10.1",

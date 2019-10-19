@@ -1147,10 +1147,22 @@
   dependencies:
     "@types/node" "*"
 
+"@types/codemirror@^0.0.79":
+  version "0.0.79"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.79.tgz#914ff1723d3bb858c3639b428c33db28fb6bb426"
+  integrity sha512-3+rAlG9lCc14eGfz/eZJHoKa6YGNE+weFN2ReiHm+BuepscBnA45T37Gp/hfZFCcsvyxRecnYVPk2fAWPDAPEw==
+  dependencies:
+    "@types/tern" "*"
+
 "@types/debug@*":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.5.tgz#b14efa8852b7768d898906613c23f688713e02cd"
   integrity sha512-Q1y515GcOdTHgagaVFhHnIFQ38ygs/kmxdNpvpou+raI9UO3YZcHDngBSYKQklcKlvA7iuQlmIKbzvmxcOE9CQ==
+
+"@types/estree@*":
+  version "0.0.39"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+  integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/events@*":
   version "3.0.0"
@@ -1379,6 +1391,13 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.4.tgz#b4ffc7dc97b498c969b360a41eee247f82616370"
   integrity sha512-78AdXtlhpCHT0K3EytMpn4JNxaf5tbqbLcbIRoQIHzpTIyjpxLQKRoxU55ujBXAtg3Nl2h/XWvfDa9dsMOd0pQ==
+
+"@types/tern@*":
+  version "0.23.3"
+  resolved "https://registry.yarnpkg.com/@types/tern/-/tern-0.23.3.tgz#4b54538f04a88c9ff79de1f6f94f575a7f339460"
+  integrity sha512-imDtS4TAoTcXk0g7u4kkWqedB3E4qpjXzCpD2LU5M5NAXHzCDsypyvXSaG7mM8DKYkCRa7tFp4tS/lp/Wo7Q3w==
+  dependencies:
+    "@types/estree" "*"
 
 "@types/uglify-js@*":
   version "3.0.4"
@@ -2761,6 +2780,11 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codemirror@^5.49.0:
+  version "5.49.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.49.0.tgz#adedbffcc81091e4a0334bcb96b1ae3b7ada5e3f"
+  integrity sha512-Hyzr0HToBdZpLBN9dYFO/KlJAsKH37/cXVHPAqa+imml0R92tb9AkmsvjnXL+SluEvjjdfkDgRjc65NG5jnMYA==
 
 collection-visit@^1.0.0:
   version "1.0.0"
