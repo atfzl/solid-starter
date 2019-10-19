@@ -1,20 +1,10 @@
-import { render } from 'solid-js/dom';
-import App from './app';
+import '#/style';
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
-const renderApp = () => {
-  const appElement = document.getElementById('root')!;
+// or import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+// if shipping only a subset of the features & languages is desired
 
-  while (appElement.firstChild) {
-    appElement.removeChild(appElement.firstChild);
-  }
-
-  render(() => <App />, appElement);
-};
-
-if (module.hot) {
-  module.hot.accept();
-
-  renderApp();
-} else {
-  renderApp();
-}
+monaco.editor.create(document.getElementById('root')!, {
+  value: 'console.log("Hello, world")',
+  language: 'javascript',
+});
