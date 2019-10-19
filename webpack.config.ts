@@ -3,6 +3,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as path from 'path';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 const MonacoEditorPlugin = require('monaco-editor-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isAnalyze = !!process.env.ANALYZE;
@@ -39,6 +40,16 @@ module.exports = {
     new MonacoEditorPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({ template: '#/index.html' }),
+    new CompressionPlugin(),
+    new CompressionPlugin({
+      filename: '[path].br[query]',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
+    }),
     isAnalyze && new BundleAnalyzerPlugin(),
   ].filter(a => !!a),
 
