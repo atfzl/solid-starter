@@ -3,11 +3,15 @@ import masterDB from '#/services/pouchdb.service';
 import { syncPouchDBWithDropbox } from '#/services/sync.service';
 import { setTaskState } from './task.state';
 
+export const dumpDBToUI = () => {
+  masterDB.allDocs<TaskModel>({ include_docs: true }).then(result => {
+    setTaskState({ tasks: result.rows.map(a => a.doc) });
+  });
+};
+
 const taskPipelines = [
   () => {
-    masterDB.allDocs<TaskModel>({ include_docs: true }).then(result => {
-      setTaskState({ tasks: result.rows.map(a => a.doc) });
-    });
+    dumpDBToUI();
   },
   () => {
     masterDB
