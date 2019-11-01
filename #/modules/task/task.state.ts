@@ -16,7 +16,7 @@ const [taskState, setTaskState] = createState<TaskState>({
     },
     {
       text: 'home',
-      active: true,
+      active: false,
     },
     {
       text: '@sakib',
@@ -31,7 +31,7 @@ const [taskState, setTaskState] = createState<TaskState>({
       active: false,
     },
   ],
-  superTag: 'inbox',
+  superTag: 'next',
 });
 
 export { taskState, setTaskState };
