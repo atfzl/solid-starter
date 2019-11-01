@@ -30,7 +30,7 @@ function TaskComponent(props: Props) {
           props.onCheckboxClick(props.data._id, (e.target as any).checked);
         }}
         type="checkbox"
-        checked={(void 0, props.data.checked)}
+        checked={props.data.checked}
         id={inputId}
       />
       <label
@@ -40,9 +40,9 @@ function TaskComponent(props: Props) {
           margin-left: 6px;
         `}
       >
-        {(void 0, props.data.text)}
+        {props.data.text}
       </label>
-      <For each={(void 0, Object.keys(props.data.tags))}>
+      <For each={Object.keys(props.data.tags)}>
         {tag => (
           <Tag
             className={css`

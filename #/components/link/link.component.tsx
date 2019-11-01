@@ -21,9 +21,9 @@ function LinkComponent(props: Props) {
 
         history.push(href);
       }}
-      className={(void 0, props.className)}
+      className={props.className}
     >
-      {(void 0, props.children)}
+      {props.children}
     </a>
   );
 }

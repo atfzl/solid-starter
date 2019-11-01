@@ -33,7 +33,7 @@
     "@types/webpack-bundle-analyzer": "^2.13.3",
     "@types/webpack-env": "^1.14.0",
     "babel-loader": "^8.0.6",
-    "babel-preset-solid": "^0.1.1",
+    "babel-preset-solid": "^0.2.0",
     "css-loader": "^3.2.0",
     "fork-ts-checker-webpack-plugin": "^1.5.0",
     "html-webpack-plugin": "^3.2.0",
@@ -59,6 +59,6 @@
     "pouchdb-load": "^1.4.6",
     "pouchdb-replication-stream": "^1.2.9",
     "rxjs": "^6.5.3",
-    "solid-js": "^0.11.4"
+    "solid-js": "^0.12.0"
   }
 }
