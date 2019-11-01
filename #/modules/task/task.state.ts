@@ -9,28 +9,7 @@ export interface TaskState {
 
 const [taskState, setTaskState] = createState<TaskState>({
   tasks: [],
-  tags: [
-    {
-      text: 'next',
-      active: false,
-    },
-    {
-      text: 'home',
-      active: false,
-    },
-    {
-      text: '@sakib',
-      active: false,
-    },
-    {
-      text: '@neha',
-      active: false,
-    },
-    {
-      text: 'work',
-      active: false,
-    },
-  ],
+  tags: [],
   superTag: 'next',
 });
 

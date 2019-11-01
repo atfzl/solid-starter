@@ -2,6 +2,7 @@ import Tag from '#/components/tag/tag.component';
 import TaskComponent from '#/components/task/task.component';
 import { taskActions } from '#/modules/task/task.action';
 import { activateTaskPipelines } from '#/modules/task/task.pipelines';
+import { superTagTasksSelector } from '#/modules/task/task.selectors';
 import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';
 import { afterEffects } from 'solid-js';
@@ -54,15 +55,13 @@ function SuperTagView() {
       </div>
       <div>
         <For
-          each={taskState.tasks
-            .filter(task => task.superTags[taskState.superTag])
-            .filter(task => {
-              const activeTagsText = taskState.tags
-                .filter(tag => tag.active)
-                .map(tag => tag.text);
+          each={superTagTasksSelector().filter(task => {
+            const activeTagsText = taskState.tags
+              .filter(tag => tag.active)
+              .map(tag => tag.text);
 
-              return activeTagsText.every(tagText => task.tags[tagText]);
-            })}
+            return activeTagsText.every(tagText => task.tags[tagText]);
+          })}
         >
           {task => (
             <TaskComponent
