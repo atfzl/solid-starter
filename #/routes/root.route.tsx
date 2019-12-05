@@ -3,7 +3,7 @@ import { css } from 'emotion';
 import SideBarRow from './components/side-bar-row/side-bar-row.component';
 import SuperTagView from './components/super-tag-view/super-tag-view.component';
 
-function Routes() {
+export function RootRoute() {
   return (
     <div
       className={css`
@@ -55,5 +55,3 @@ function Routes() {
     </div>
   );
 }
-
-export default Routes;

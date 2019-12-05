@@ -1,5 +1,5 @@
 import { css } from 'emotion';
-import Routes from './routes/root.route';
+import { RootRoute } from './routes/root.route';
 import './style';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         min-width: 600px;
       `}
     >
-      <Routes />
+      <RootRoute />
     </div>
   );
 }
