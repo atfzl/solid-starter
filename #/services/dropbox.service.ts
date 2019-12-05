@@ -4,8 +4,7 @@ import { from } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 const dbx = new Dropbox({
-  accessToken:
-    'ERRPrpnTV4AAAAAAAAABeriIg8M6WSuzAVwTuQoc2QWifJwpwl5MiTk0hISR1Ts7',
+  accessToken: process.env.DROPBOX_ACCESS_TOKEN,
   fetch,
 });
 
