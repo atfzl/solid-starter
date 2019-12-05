@@ -1,4 +1,6 @@
-import { css, cx } from 'emotion';
+import { taskActions } from '#/modules/task/task.action';
+import { css } from 'emotion';
+import SideBarRow from './components/side-bar-row/side-bar-row.component';
 import SuperTagView from './components/super-tag-view/super-tag-view.component';
 
 function Routes() {
@@ -21,23 +23,16 @@ function Routes() {
           className={css`
             font-weight: 500;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            flex-direction: column;
           `}
         >
-          <div
-            className={css`
-              display: flex;
-            `}
-          >
-            <i className={cx('material-icons')}>inbox</i>
-            <div
-              className={css`
-                margin-left: 6px;
-              `}
-            >
-              Inbox
-            </div>
-          </div>
+          <SideBarRow onClick={taskActions.onSuperTagClick} id="inbox">
+            Inbox
+          </SideBarRow>
+          <SideBarRow onClick={taskActions.onSuperTagClick} id="next">
+            Next
+          </SideBarRow>
         </div>
       </div>
       <div

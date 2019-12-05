@@ -15,3 +15,5 @@ export interface TagModel {
   text: string;
   active: boolean;
 }
+
+export type SuperTag = 'inbox' | 'next';

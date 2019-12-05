@@ -1,4 +1,4 @@
-import { TagModel, TaskDoc } from '#/models/task.model';
+import { SuperTag, TagModel, TaskDoc } from '#/models/task.model';
 import { setTaskState } from './task.state';
 
 export const taskActions = {
@@ -12,5 +12,8 @@ export const taskActions = {
   },
   onCheckboxClick(id: string, checked: boolean) {
     setTaskState('tasks', (task: TaskDoc) => task._id === id, { checked });
+  },
+  onSuperTagClick(id: SuperTag) {
+    setTaskState({ superTag: id });
   },
 };

@@ -1,11 +1,14 @@
+import { dumpDBToUI } from '#/modules/task/task.pipelines';
 import { dumpDBtoDropbox, getDropboxDB } from '#/services/dropbox.service';
 import masterDB from '#/services/pouchdb.service';
 import PouchDB from 'pouchdb-browser';
-import { interval } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { delay, switchMap, tap } from 'rxjs/operators';
+
+let counter = 0;
 
 export const syncPouchDBWithDropbox = () => {
-  return interval(10000).pipe(
+  const sync$ = of(1).pipe(
     tap(() => console.log('starting db sync')),
     switchMap(getDropboxDB),
     switchMap(response => {
@@ -21,4 +24,18 @@ export const syncPouchDBWithDropbox = () => {
     }),
     tap(() => console.log('sync done successfully')),
   );
+
+  const syncAgain: () => any = () =>
+    sync$.pipe(
+      tap(() => {
+        if (counter === 0) {
+          dumpDBToUI();
+        }
+        counter += 1;
+      }),
+      delay(10000),
+      switchMap(() => syncAgain()),
+    );
+
+  return syncAgain();
 };

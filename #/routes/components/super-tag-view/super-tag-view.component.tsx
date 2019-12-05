@@ -2,6 +2,7 @@ import Tag from '#/components/tag/tag.component';
 import TaskComponent from '#/components/task/task.component';
 import { taskActions } from '#/modules/task/task.action';
 import { activateTaskPipelines } from '#/modules/task/task.pipelines';
+import { superTagTasksSelector } from '#/modules/task/task.selectors';
 import { taskState } from '#/modules/task/task.state';
 import { css } from 'emotion';
 import { afterEffects } from 'solid-js';
@@ -27,7 +28,7 @@ function SuperTagView() {
           user-select: none;
         `}
       >
-        Inbox
+        {taskState.superTag}
       </div>
       <div
         className={css`
@@ -37,41 +38,35 @@ function SuperTagView() {
       >
         <Tag
           onClick={taskActions.onAllTagClick}
-          type={
-            (void 0,
-            taskState.tags.every(tag => !tag.active) ? 'greyed' : undefined)
-          }
+          type={taskState.tags.every(tag => !tag.active) ? 'greyed' : undefined}
         >
           All
         </Tag>
-        <For each={(void 0, taskState.tags)}>
+        <For each={taskState.tags}>
           {tag => (
             <Tag
               onClick={() => taskActions.onTagClick(tag.text)}
-              type={(void 0, tag.active ? 'active' : undefined)}
+              type={tag.active ? 'active' : undefined}
             >
-              <div>{(void 0, tag.text)}</div>
+              <div>{tag.text}</div>
             </Tag>
           )}
         </For>
       </div>
       <div>
         <For
-          each={
-            (void 0,
-            taskState.tasks.filter(task => {
-              const activeTagsText = taskState.tags
-                .filter(tag => tag.active)
-                .map(tag => tag.text);
+          each={superTagTasksSelector().filter(task => {
+            const activeTagsText = taskState.tags
+              .filter(tag => tag.active)
+              .map(tag => tag.text);
 
-              return activeTagsText.every(tagText => task.tags[tagText]);
-            }))
-          }
+            return activeTagsText.every(tagText => task.tags[tagText]);
+          })}
         >
           {task => (
             <TaskComponent
               onCheckboxClick={taskActions.onCheckboxClick}
-              data={(void 0, task)}
+              data={task}
             />
           )}
         </For>

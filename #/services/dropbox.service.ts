@@ -5,7 +5,7 @@ import { map, switchMap } from 'rxjs/operators';
 
 const dbx = new Dropbox({
   accessToken:
-    'ERRPrpnTV4AAAAAAAAABW9y34oF1TzonoCPUEM5GRgxk1tWM4tIXIWRzBD__XOV4',
+    'ERRPrpnTV4AAAAAAAAABeriIg8M6WSuzAVwTuQoc2QWifJwpwl5MiTk0hISR1Ts7',
   fetch,
 });
 
