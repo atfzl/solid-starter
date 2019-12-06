@@ -1,17 +1,12 @@
-import { css } from 'emotion';
+import { history } from '#/services/history';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { RootRoute } from './routes/root.route';
-import './style';
 
 function App() {
   return (
-    <div
-      className={css`
-        height: 100%;
-        width: 100%;
-        min-width: 600px;
-      `}
-    >
-      <RootRoute />
+    <div>
+      <NavbarComponent />
+      <RootRoute location={history.location} />
     </div>
   );
 }
