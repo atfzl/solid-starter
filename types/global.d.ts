@@ -12,3 +12,8 @@ declare module 'memorystream' {
   const x: any;
   export = x;
 }
+
+declare module 'readability' {
+  const x: { Readability: any; JSDOMParser: any };
+  export = x;
+}

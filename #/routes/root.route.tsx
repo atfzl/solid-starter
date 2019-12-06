@@ -1,7 +1,7 @@
 import { taskActions } from '#/modules/task/task.action';
 import { css } from 'emotion';
+import { ArticleView } from './components/article-view/article-view';
 import SideBarRow from './components/side-bar-row/side-bar-row.component';
-import SuperTagView from './components/super-tag-view/super-tag-view.component';
 
 export function RootRoute() {
   return (
@@ -37,7 +37,6 @@ export function RootRoute() {
       </div>
       <div
         className={css`
-          padding: 72px 52px 0 52px;
           width: 100%;
           display: flex;
           justify-content: center;
@@ -46,10 +45,9 @@ export function RootRoute() {
         <div
           className={css`
             width: 100%;
-            max-width: 1000px;
           `}
         >
-          <SuperTagView />
+          <ArticleView />
         </div>
       </div>
     </div>

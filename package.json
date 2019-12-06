@@ -58,6 +58,7 @@
     "pouchdb-browser": "^7.1.1",
     "pouchdb-load": "^1.4.6",
     "pouchdb-replication-stream": "^1.2.9",
+    "readability": "https://github.com/mozilla/readability",
     "rxjs": "^6.5.3",
     "solid-js": "^0.14.8"
   }
