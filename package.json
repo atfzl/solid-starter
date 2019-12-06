@@ -27,8 +27,6 @@
     "@storybook/html": "~5.1.11",
     "@types/history": "^4.7.3",
     "@types/html-webpack-plugin": "^3.2.1",
-    "@types/pouchdb": "^6.4.0",
-    "@types/ramda": "^0.26.36",
     "@types/webpack": "^4.41.0",
     "@types/webpack-bundle-analyzer": "^2.13.3",
     "@types/webpack-env": "^1.14.1",
@@ -51,13 +49,6 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "dropbox": "^4.0.30",
-    "emotion": "^10.0.23",
-    "history": "^4.10.1",
-    "memorystream": "^0.3.1",
-    "pouchdb-browser": "^7.1.1",
-    "pouchdb-load": "^1.4.6",
-    "pouchdb-replication-stream": "^1.2.9",
     "rxjs": "^6.5.3",
     "solid-js": "^0.14.8"
   }
