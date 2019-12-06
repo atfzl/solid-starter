@@ -14,6 +14,11 @@ declare module 'memorystream' {
 }
 
 declare module 'readability' {
-  const x: { Readability: any; JSDOMParser: any };
+  const x: any;
   export = x;
+}
+
+declare module '!!*' {
+  const x: any;
+  export default x;
 }
