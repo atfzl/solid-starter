@@ -30,4 +30,4 @@ export interface CommentModel {
   author: AuthorModel;
 }
 
-export type ITag = string;
+export type TagModel = string;
