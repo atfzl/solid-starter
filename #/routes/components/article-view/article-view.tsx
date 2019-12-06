@@ -1,44 +1,41 @@
-import articleViewCSS from '!!raw-loader!./article-view.css';
 import { css } from 'emotion';
 import * as Readability from 'readability';
+import Typography from 'typography';
+import fairyGatesTheme from 'typography-theme-fairy-gates';
+
+const typography = new Typography(fairyGatesTheme);
 
 export function ArticleView() {
   function onLoad() {
     const iframeDocument = (document.getElementById('article-view') as any)
-      .contentDocument;
-
-    console.log(iframeDocument);
+      .contentDocument as Document;
 
     const article = new Readability(iframeDocument).parse();
 
     iframeDocument.head.innerHTML = `
       <style>
-        ${articleViewCSS}
-        body {
-          max-width: 600px;
-          margin: 0 auto;
-        }
+        ${typography.toString()}
       </style>
     `;
-    iframeDocument.body.classList = 'light sans-serif loaded';
     iframeDocument.body.innerHTML = `
-      <div class="content">
-        <div class="moz-reader-content line-height4 reader-show-element">
-          ${article.content}
-        </div>
+      <div style="max-width: 600px; margin: 0 auto; margin-top: 100px; margin-bottom: 100px;">
+        <h1>
+          ${article.title}
+        </h1>
+        ${article.content}
       </div>
     `;
-    console.log(article);
   }
 
   return (
     <iframe
       id="article-view"
       onLoad={onLoad}
-      src="https://www.atfzl.com/understanding-solid-jsx"
+      src="https://blog.codinghorror.com/the-cloud-is-just-someone-elses-computer/"
       className={css`
         width: 100%;
         height: 100%;
+        border: none;
       `}
     ></iframe>
   );
