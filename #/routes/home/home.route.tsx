@@ -1,3 +1,5 @@
+import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
+
 export function HomeRoute() {
   return (
     <div class="home-page">
@@ -26,6 +28,26 @@ export function HomeRoute() {
               </ul>
             </div>
 
+            <ArticlePreviewComponent
+              data={{
+                author: {
+                  bio: null,
+                  following: false,
+                  image:
+                    'https://static.productionready.io/images/smiley-cyrus.jpg',
+                  username: 'satish2328',
+                },
+                body: 'test',
+                createdAt: '2019-12-06T20:46:04.207Z',
+                description: 'test',
+                favorited: false,
+                favoritesCount: 1,
+                slug: 'test-azailf',
+                tagList: [],
+                title: 'test',
+                updatedAt: '2019-12-06T20:46:04.207Z',
+              }}
+            />
             <div class="article-preview">
               <div class="article-meta">
                 <a href="profile.html">
