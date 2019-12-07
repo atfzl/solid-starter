@@ -12,7 +12,7 @@ export function NavbarComponent() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="#/editor">
               <i class="ion-compose"></i>&nbsp;New Post
             </a>
           </li>
@@ -22,7 +22,7 @@ export function NavbarComponent() {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="#/register">
               Sign up
             </a>
           </li>
