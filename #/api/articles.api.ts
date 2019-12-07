@@ -6,7 +6,7 @@ interface GetAllArticlesParams {
   offset: number;
 }
 
-interface GetAllArticlesResponse {
+export interface GetAllArticlesResponse {
   articles: ArticleModel[];
   articlesCount: number;
 }

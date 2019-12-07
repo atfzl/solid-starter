@@ -1,12 +1,13 @@
 import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
 import { homeActions } from '#/modules/home/home.actions';
+import { homePipelines } from '#/modules/home/home.pipelines';
 import { homeState } from '#/modules/home/home.state';
 import * as cx from 'classnames';
 import { For } from 'solid-js/dom';
 
 export function HomeRoute() {
-  homeActions.fetchAndSetAllTagsState();
-  homeActions.fetchAndSetGlobalFeedState();
+  homePipelines.getTagsPipeline();
+  homePipelines.getFeedArticlesPipeline();
 
   return (
     <div class="home-page">
@@ -26,9 +27,11 @@ export function HomeRoute() {
                   <a
                     className={cx('nav-link', {
                       active: homeState.selectedFeed === 'personal',
-                      disabled: homeState.selectedFeed !== 'personal',
                     })}
-                    href=""
+                    onClick={() => {
+                      homeActions.setSelectedFeed('personal');
+                    }}
+                    href="#/"
                   >
                     Your Feed
                   </a>
@@ -37,9 +40,11 @@ export function HomeRoute() {
                   <a
                     className={cx('nav-link', {
                       active: homeState.selectedFeed === 'global',
-                      disabled: homeState.selectedFeed !== 'global',
                     })}
-                    href=""
+                    href="#/"
+                    onClick={() => {
+                      homeActions.setSelectedFeed('global');
+                    }}
                   >
                     Global Feed
                   </a>
