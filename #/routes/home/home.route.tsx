@@ -57,7 +57,8 @@ export function HomeRoute() {
                 >
                   <li class="nav-item">
                     <a className="nav-link active" href="#/">
-                      {homeState.selectedFeed}
+                      <i class="ion-pound"></i>{' '}
+                      {homeState.selectedFeed.slice(1)}
                     </a>
                   </li>
                 </Show>
