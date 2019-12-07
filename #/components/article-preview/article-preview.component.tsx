@@ -1,4 +1,5 @@
 import { ArticleModel } from '#/models/model';
+import { For } from 'solid-js/dom';
 
 interface Props {
   data: ArticleModel;
@@ -25,6 +26,11 @@ export function ArticlePreviewComponent(props: Props) {
         <h1>{props.data.title}</h1>
         <p>{props.data.description}</p>
         <span>Read more...</span>
+        <ul class="tag-list">
+          <For each={props.data.tagList}>
+            {tag => <li class="tag-default tag-pill tag-outline">{tag}</li>}
+          </For>
+        </ul>
       </a>
     </div>
   );
