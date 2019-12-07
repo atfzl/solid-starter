@@ -9,11 +9,11 @@ export function ArticlePreviewComponent(props: Props) {
   return (
     <div class="article-preview">
       <div class="article-meta">
-        <a href="profile.html">
+        <a href={`#/@${props.data.author.username}`}>
           <img src={props.data.author.image} />
         </a>
         <div class="info">
-          <a href="" class="author">
+          <a href={`#/@${props.data.author.username}`} class="author">
             {props.data.author.username}
           </a>
           <span class="date">{props.data.createdAt}</span>

@@ -14,6 +14,9 @@ export function RootRoute(props: Props) {
       <Match when={props.location === '#/settings'}>
         <div>setting</div>
       </Match>
+      <Match when={props.location.startsWith('#/@')}>
+        <div>author details</div>
+      </Match>
     </Switch>
   );
 }
