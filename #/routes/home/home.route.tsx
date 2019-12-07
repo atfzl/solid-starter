@@ -3,7 +3,7 @@ import { homeActions } from '#/modules/home/home.actions';
 import { homePipelines } from '#/modules/home/home.pipelines';
 import { homeState } from '#/modules/home/home.state';
 import * as cx from 'classnames';
-import { For } from 'solid-js/dom';
+import { For, Show } from 'solid-js/dom';
 
 export function HomeRoute() {
   homePipelines.getTagsPipeline();
@@ -49,6 +49,17 @@ export function HomeRoute() {
                     Global Feed
                   </a>
                 </li>
+                <Show
+                  when={
+                    !['global', 'personal'].includes(homeState.selectedFeed)
+                  }
+                >
+                  <li class="nav-item">
+                    <a className="nav-link active" href="#/">
+                      {homeState.selectedFeed}
+                    </a>
+                  </li>
+                </Show>
               </ul>
             </div>
 
@@ -64,7 +75,13 @@ export function HomeRoute() {
               <div class="tag-list">
                 <For each={homeState.tags}>
                   {tagData => (
-                    <a href="" class="tag-pill tag-default">
+                    <a
+                      href="#/"
+                      class="tag-pill tag-default"
+                      onClick={() => {
+                        homeActions.setSelectedTag(tagData);
+                      }}
+                    >
                       {tagData}
                     </a>
                   )}

@@ -1,10 +1,16 @@
-import { ArticleModel } from '#/models/model';
+import { ArticleModel, TagModel } from '#/models/model';
 import { axiosInstance } from '#/singletons/axios.singleton';
 
 interface GetAllArticlesParams {
-  limit: number;
-  offset: number;
+  limit?: number;
+  offset?: number;
+  tag?: TagModel;
 }
+
+const GetAllArticlesDefaultParams = {
+  limit: 10,
+  offset: 0,
+};
 
 export interface GetAllArticlesResponse {
   articles: ArticleModel[];
@@ -12,12 +18,12 @@ export interface GetAllArticlesResponse {
 }
 
 export const articlesApi = {
-  search(params: GetAllArticlesParams = { limit: 10, offset: 0 }) {
+  search(params: GetAllArticlesParams = GetAllArticlesDefaultParams) {
     return axiosInstance.get<GetAllArticlesResponse>('/articles', {
-      params: params,
+      params: { ...GetAllArticlesDefaultParams, ...params },
     });
   },
-  feed(params: GetAllArticlesParams = { limit: 10, offset: 0 }) {
+  feed(params: GetAllArticlesParams = GetAllArticlesDefaultParams) {
     return axiosInstance.get<GetAllArticlesResponse>('/articles/feed', {
       params: params,
     });

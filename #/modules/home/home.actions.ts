@@ -11,4 +11,7 @@ export const homeActions = {
   setTags(tags: TagModel[]) {
     setHomeState({ tags });
   },
+  setSelectedTag(tag: TagModel) {
+    setHomeState({ selectedFeed: '#' + tag });
+  },
 };

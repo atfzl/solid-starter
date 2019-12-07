@@ -12,7 +12,12 @@ export const homePipelines = {
       if (homeState.selectedFeed === 'personal') {
         response = await articlesApi.feed();
       } else {
-        response = await articlesApi.search();
+        const params = homeState.selectedFeed?.startsWith('#')
+          ? {
+              tag: homeState.selectedFeed.slice(1),
+            }
+          : undefined;
+        response = await articlesApi.search(params);
       }
 
       homeActions.setArticles(response.data.articles);

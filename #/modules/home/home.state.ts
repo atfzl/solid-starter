@@ -3,7 +3,7 @@ import { createState } from 'solid-js';
 
 interface HomeState {
   feedArticles: ArticleModel[];
-  selectedFeed: 'global' | 'personal';
+  selectedFeed: 'global' | 'personal' | TagModel;
   tags: TagModel[];
 }
 
