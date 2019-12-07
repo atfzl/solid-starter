@@ -1,9 +1,13 @@
 import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
+import { homeActions } from '#/modules/home/home.actions';
 import { homeState } from '#/modules/home/home.state';
 import * as cx from 'classnames';
 import { For } from 'solid-js/dom';
 
 export function HomeRoute() {
+  homeActions.fetchAndSetAllTagsState();
+  homeActions.fetchAndSetGlobalFeedState();
+
   return (
     <div class="home-page">
       <div class="banner">
