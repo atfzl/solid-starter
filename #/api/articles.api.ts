@@ -1,7 +1,7 @@
 import { ArticleModel, TagModel } from '#/models/model';
 import { axiosInstance } from '#/singletons/axios.singleton';
 
-interface GetAllArticlesParams {
+export interface GetAllArticlesParams {
   limit?: number;
   offset?: number;
   tag?: TagModel;

@@ -1,4 +1,5 @@
 import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
+import { PaginationComponent } from '#/components/pagination/pagination.component';
 import { homeActions } from '#/modules/home/home.actions';
 import { homePipelines } from '#/modules/home/home.pipelines';
 import { homeState } from '#/modules/home/home.state';
@@ -66,6 +67,13 @@ export function HomeRoute() {
             <For each={homeState.feedArticles}>
               {articleData => <ArticlePreviewComponent data={articleData} />}
             </For>
+
+            <PaginationComponent
+              limit={homeState.limit}
+              offset={homeState.offset}
+              totalLength={homeState.articlesLength}
+              onButtonClick={homeActions.setOffset}
+            />
           </div>
 
           <div class="col-md-3">

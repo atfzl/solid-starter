@@ -1,4 +1,8 @@
-import { articlesApi, GetAllArticlesResponse } from '#/api/articles.api';
+import {
+  articlesApi,
+  GetAllArticlesParams,
+  GetAllArticlesResponse,
+} from '#/api/articles.api';
 import { tagsApi } from '#/api/tags.api';
 import { AxiosResponse } from 'axios';
 import { createEffect } from 'solid-js';
@@ -12,15 +16,26 @@ export const homePipelines = {
       if (homeState.selectedFeed === 'personal') {
         response = await articlesApi.feed();
       } else {
-        const params = homeState.selectedFeed?.startsWith('#')
-          ? {
-              tag: homeState.selectedFeed.slice(1),
-            }
-          : undefined;
+        const commonParams = {
+          limit: homeState.limit,
+          offset: homeState.offset,
+        };
+
+        let params: GetAllArticlesParams = commonParams;
+        if (homeState.selectedFeed?.startsWith('#')) {
+          params = {
+            ...commonParams,
+            tag: homeState.selectedFeed.slice(1),
+          };
+        }
+
         response = await articlesApi.search(params);
       }
 
-      homeActions.setArticles(response.data.articles);
+      homeActions.setArticles(
+        response.data.articles,
+        response.data.articlesCount,
+      );
     });
   },
   async getTagsPipeline() {

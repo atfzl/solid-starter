@@ -1,4 +1,3 @@
-import '#/style';
 import { addDecorator, configure } from '@storybook/html';
 import { createRoot } from 'solid-js';
 
