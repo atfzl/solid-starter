@@ -1,5 +1,6 @@
 import { Match, Switch } from 'solid-js/dom';
 import { HomeRoute } from './home/home.route';
+import { ProfileRoute } from './profile/profile.route';
 
 interface Props {
   location: string;
@@ -15,7 +16,7 @@ export function RootRoute(props: Props) {
         <div>setting</div>
       </Match>
       <Match when={props.location.startsWith('#/@')}>
-        <div>author details</div>
+        <ProfileRoute />
       </Match>
     </Switch>
   );
