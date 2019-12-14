@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <NavbarComponent />
-      <RootRoute location={routingState.location} />
+      <RootRoute location={routingState.locationHash} />
     </div>
   );
 }
