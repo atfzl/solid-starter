@@ -1,10 +1,14 @@
 import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
 import { UserInfoComponent } from '#/components/user-info/user-info.component';
+import { profilePipelines } from '#/modules/profile/profile.pipelines';
+import { profileState } from '#/modules/profile/profile.state';
 
 export function ProfileRoute() {
+  profilePipelines.getProfileDataPipeline();
+
   return (
     <div class="profile-page">
-      <UserInfoComponent />
+      <UserInfoComponent data={profileState.profileData} />
 
       <div class="container">
         <div class="row">
