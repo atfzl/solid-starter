@@ -1,10 +1,14 @@
 import { ArticlePreviewComponent } from '#/components/article-preview/article-preview.component';
 import { UserInfoComponent } from '#/components/user-info/user-info.component';
+import { profileActions } from '#/modules/profile/profile.actions';
 import { profilePipelines } from '#/modules/profile/profile.pipelines';
 import { profileState } from '#/modules/profile/profile.state';
+import cx from 'classnames';
+import { For } from 'solid-js/dom';
 
 export function ProfileRoute() {
   profilePipelines.getProfileDataPipeline();
+  profilePipelines.getProfileArticlesPipeline();
 
   return (
     <div class="profile-page">
@@ -16,59 +20,37 @@ export function ProfileRoute() {
             <div class="articles-toggle">
               <ul class="nav nav-pills outline-active">
                 <li class="nav-item">
-                  <a class="nav-link active" href="">
+                  <a
+                    class={cx('nav-link', {
+                      active: profileState.selectedArticles === 'personal',
+                    })}
+                    href="javascript:void"
+                    onClick={() =>
+                      profileActions.setSelectedArticle('personal')
+                    }
+                  >
                     My Articles
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">
+                  <a
+                    class={cx('nav-link', {
+                      active: profileState.selectedArticles === 'favorited',
+                    })}
+                    href="javascript:void"
+                    onClick={() =>
+                      profileActions.setSelectedArticle('favorited')
+                    }
+                  >
                     Favorited Articles
                   </a>
                 </li>
               </ul>
             </div>
 
-            <ArticlePreviewComponent
-              data={{
-                author: {
-                  bio: null,
-                  following: false,
-                  image:
-                    'https://static.productionready.io/images/smiley-cyrus.jpg',
-                  username: 'satish2328',
-                },
-                body: 'test',
-                createdAt: '2019-12-06T20:46:04.207Z',
-                description: 'test',
-                favorited: false,
-                favoritesCount: 1,
-                slug: 'test-azailf',
-                tagList: [],
-                title: 'test',
-                updatedAt: '2019-12-06T20:46:04.207Z',
-              }}
-            />
-
-            <ArticlePreviewComponent
-              data={{
-                author: {
-                  bio: null,
-                  following: false,
-                  image:
-                    'https://static.productionready.io/images/smiley-cyrus.jpg',
-                  username: 'satish2328',
-                },
-                body: 'test',
-                createdAt: '2019-12-06T20:46:04.207Z',
-                description: 'test',
-                favorited: false,
-                favoritesCount: 1,
-                slug: 'test-azailf',
-                tagList: [],
-                title: 'test',
-                updatedAt: '2019-12-06T20:46:04.207Z',
-              }}
-            />
+            <For each={profileState.articles}>
+              {articleData => <ArticlePreviewComponent data={articleData} />}
+            </For>
           </div>
         </div>
       </div>

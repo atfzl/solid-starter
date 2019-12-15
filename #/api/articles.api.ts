@@ -1,10 +1,12 @@
-import { ArticleModel, TagModel } from '#/models/model';
+import { ArticleModel, AuthorModel, TagModel } from '#/models/model';
 import { axiosInstance } from '#/singletons/axios.singleton';
 
 export interface GetAllArticlesParams {
   limit?: number;
   offset?: number;
   tag?: TagModel;
+  author?: AuthorModel['username'];
+  favorited?: AuthorModel['username'];
 }
 
 const GetAllArticlesDefaultParams = {
