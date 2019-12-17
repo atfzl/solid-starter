@@ -8292,10 +8292,10 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
-solid-js@^0.14.8:
-  version "0.14.8"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.14.8.tgz#919394845d98b3df76f3b42b2900eed48a6ebb06"
-  integrity sha512-bzlQ7E0HDvT53C0ezKn5zDxAVnHHwH1zz1VBVBluVoI8Tdp27WAGxToXKnPEe1j9d9CgbW1rV36h4wvptVGGrQ==
+solid-js@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.15.0.tgz#b07dcf9e0e2806d938adb39e8bec4dc955dd3a7f"
+  integrity sha512-SvkwZvujX5Lm4E8scPSnSdhMlW7zqxyCU/WLiFRYZ0yVcUofISZwhhEPSK1gmQZYYmXsy3tFaYXvHNSlDR8gbg==
 
 source-list-map@^2.0.0:
   version "2.0.1"
