@@ -130,7 +130,7 @@
   dependencies:
     "@babel/types" "^7.7.4"
 
-"@babel/helper-module-imports@^7.0.0", "@babel/helper-module-imports@^7.7.0", "@babel/helper-module-imports@^7.7.4":
+"@babel/helper-module-imports@^7.0.0", "@babel/helper-module-imports@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.7.4.tgz#e5a92529f8888bf319a6376abfbd1cebc491ad91"
   integrity sha512-dGcrX6K9l8258WFjyDLJwuVKxR4XZfU0/vTUgOQYWEnRD8mgr+p4d6fCUMq/ys0h4CCt/S5JhbvtyErjWouAUQ==
@@ -335,7 +335,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-syntax-jsx@^7.2.0":
+"@babel/plugin-syntax-jsx@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.7.4.tgz#dab2b56a36fb6c3c222a1fbc71f7bf97f327a9ec"
   integrity sha512-wuy6fiMe9y7HeZBWXYCGt2RGxZOj0BImZ9EyXJVnVGBKO/Br592rbR3rtIQn0eQhAk9vqaKP5n8tVqEFBQMfLg==
@@ -2039,13 +2039,13 @@ babel-plugin-emotion@^10.0.22, babel-plugin-emotion@^10.0.23, babel-plugin-emoti
     find-root "^1.1.0"
     source-map "^0.5.7"
 
-babel-plugin-jsx-dom-expressions@~0.14.6:
-  version "0.14.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-dom-expressions/-/babel-plugin-jsx-dom-expressions-0.14.6.tgz#5e4fea9878faf422cc3efac08f5494090011387a"
-  integrity sha512-yzfGvGz6rr43R2H5Mv3MI7zUPP4pIr3uCFG1fhPCAaF40HLARCf1byYPNzpeuVy9zw5dbOtSOaUjzUNUDvrYYw==
+babel-plugin-jsx-dom-expressions@~0.14.10:
+  version "0.14.11"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-dom-expressions/-/babel-plugin-jsx-dom-expressions-0.14.11.tgz#dad9075d0c8e94922e868a43a0245c69cc393f9c"
+  integrity sha512-o4yE0MpEIp5RL/Z/HHhQnJAM1zOVmYKRFZVSkRMFIymOtb6zR/A/BmUfwh92cmiePEdcqYpbWG14eNGpl5EAVQ==
   dependencies:
-    "@babel/helper-module-imports" "^7.7.0"
-    "@babel/plugin-syntax-jsx" "^7.2.0"
+    "@babel/helper-module-imports" "^7.7.4"
+    "@babel/plugin-syntax-jsx" "^7.7.4"
 
 babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.5:
   version "2.7.1"
@@ -2225,12 +2225,12 @@ babel-plugin-transform-undefined-to-void@^6.9.4:
     babel-plugin-transform-undefined-to-void "^6.9.4"
     lodash "^4.17.11"
 
-babel-preset-solid@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/babel-preset-solid/-/babel-preset-solid-0.2.3.tgz#81210ab55c87349cba895e8974424f7ce5da7a29"
-  integrity sha512-TdGiceBK+qWyt2vh/h5LFbZLN7NH0FUh5PkH2YYgXxmMr+hbED1WboRkv3mgzE3WbrmTtFeD8blRy/exGBwBnA==
+babel-preset-solid@^0.15.4:
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/babel-preset-solid/-/babel-preset-solid-0.15.4.tgz#0b8030fd00998ee9008725fedb988a960d15f20b"
+  integrity sha512-ZXpA+k9k9x38s7Q/FPEoHJrXdVedC/W8DfkdhyEYl317WoKOJByZqrsVST2IXjHlrxc0veOyxSF8Z2LkEn0qBQ==
   dependencies:
-    babel-plugin-jsx-dom-expressions "~0.14.6"
+    babel-plugin-jsx-dom-expressions "~0.14.10"
 
 babel-runtime@^6.18.0:
   version "6.26.0"
