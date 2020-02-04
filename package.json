@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "dropbox": "^4.0.30",
-    "emotion": "^10.0.23",
+    "emotion": "^10.0.27",
     "history": "^4.10.1",
     "memorystream": "^0.3.1",
     "pouchdb-browser": "^7.1.1",
